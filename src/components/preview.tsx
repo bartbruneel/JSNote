@@ -28,8 +28,11 @@ const Preview: React.FC<PreviewProps> = ({ code }) => {
   const iframe = useRef<any>();
   useEffect(() => {
     iframe.current.srcdoc = html;
-    iframe.current.contentWindow.postMessage(code, "*");
   }, [code]);
+
+  const loadHandler = () => {
+    iframe.current.contentWindow.postMessage(code, "*");
+  };
 
   return (
     <iframe
@@ -37,6 +40,7 @@ const Preview: React.FC<PreviewProps> = ({ code }) => {
       ref={iframe}
       sandbox="allow-scripts"
       srcDoc={html}
+      onLoad={loadHandler}
     />
   );
 };
