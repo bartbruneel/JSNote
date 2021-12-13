@@ -2,7 +2,7 @@ import { ActionType } from "../action-types";
 import {
   Action,
   DeleteCellAction,
-  InsertCellBeforeAction,
+  InsertCellAfterAction,
   MoveCellAction,
   UpdateCellAction,
 } from "../actions";
@@ -34,8 +34,8 @@ const reducer = produce(
         return deleteCell(action, state);
       case ActionType.MOVE_CELL:
         return moveCell(action, state);
-      case ActionType.INSERT_CELL_BEFORE:
-        return insertCellBefore(action, state);
+      case ActionType.INSERT_CELL_AFTER:
+        return insertCellAfter(action, state);
       default:
         return state;
     }
@@ -70,10 +70,7 @@ const updateCell = (action: UpdateCellAction, state: CellsState) => {
   return state;
 };
 
-const insertCellBefore = (
-  action: InsertCellBeforeAction,
-  state: CellsState
-) => {
+const insertCellAfter = (action: InsertCellAfterAction, state: CellsState) => {
   const cell: Cell = {
     content: "",
     type: action.payload.type,
@@ -82,9 +79,9 @@ const insertCellBefore = (
   state.data[cell.id] = cell;
   const foundIndex = state.order.findIndex((id) => id === action.payload.id);
   if (foundIndex < 0) {
-    state.order.push(cell.id);
+    state.order.unshift(cell.id);
   } else {
-    state.order.splice(foundIndex, 0, cell.id);
+    state.order.splice(foundIndex + 1, 0, cell.id);
   }
   return state;
 };
