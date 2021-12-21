@@ -23,7 +23,7 @@
     "@jsnote-barb/local-api": "^1.0.0",
     "@types/node": "^17.0.0",
     "commander": "^8.3.0",
-    "esbuild": "0.8.26",
+    "esbuild": "0.14.0",
     "typescript": "^4.5.4"
   }
 }
