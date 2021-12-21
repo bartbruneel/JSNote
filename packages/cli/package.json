@@ -1,6 +1,6 @@
 {
   "name": "jsnote-barb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "files": [
     "dist"
@@ -17,7 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@jsnote-barb/local-api": "^1.0.0"
+    "@jsnote-barb/local-api": "^1.0.1"
   },
   "devDependencies": {
     "@jsnote-barb/local-api": "^1.0.0",
