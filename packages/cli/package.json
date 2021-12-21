@@ -11,7 +11,7 @@
   },
   "scripts": {
     "start": "tsc --watch --preserveWatchOutput",
-    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify '--define:process.env.NODE_ENV=\"development\"'"
+    "prepublishOnly": "esbuild src/index.ts --platform=node --outfile=dist/index.js --bundle --minify"
   },
   "keywords": [],
   "author": "",
@@ -25,5 +25,6 @@
     "commander": "^8.3.0",
     "esbuild": "0.14.0",
     "typescript": "^4.5.4"
-  }
+  },
+  "gitHead": "4c6913346ee0921085af261fe443dbcf59d06c5c"
 }
