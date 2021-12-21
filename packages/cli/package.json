@@ -1,5 +1,5 @@
 {
-  "name": "cli",
+  "name": "jsnote-barb",
   "version": "1.0.0",
   "description": "",
   "scripts": {
@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^8.3.0",
-    "local-api": "^1.0.0"
+    "@jsnote-barb/local-api": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^17.0.0",
